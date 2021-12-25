@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import Heroseciton from "./Herosection/Heroseciton";
+import HeroSectionImageFesba from "./Herosection/images/Herosection.jpg";
+import Navbar from "./Navbar/Navbar";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./Home/Home";
+import About from "./About/About";
+import Product from "./Product/Product";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/bahaa">bahaa</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="bahaa" element={<h1>Bahaaaaadsasiouaosiup</h1>} />
+      </Routes>
+      <div>
+        <Heroseciton
+          image={HeroSectionImageFesba}
+          heading="Web Development"
+          desc="This is iasdlkjagsdk"
+        />
+        <Heroseciton
+          image={HeroSectionImageFesba}
+          heading="Front End  Development"
+          desc="BLa BLa BLa"
+          reverse="1"
+        />
+      </div>
     </div>
   );
 }
